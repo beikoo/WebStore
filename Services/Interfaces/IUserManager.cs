@@ -9,7 +9,7 @@ namespace Services.Interfaces
 {
     public interface IUserManager 
     {
-        void RegisterUser(RegisterModel registerModel);
+        string RegisterUser(RegisterModel registerModel);
         void LoginUser(LoginModel loginModel);
         void DeleteUser(int id);
         void DeleteUser(string email);
