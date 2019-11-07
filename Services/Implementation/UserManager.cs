@@ -26,9 +26,9 @@ namespace Services.Implementation
             throw new NotImplementedException();
         }
 
-        public void LoginUser(LoginModel loginModel)
+        public string LoginUser(LoginModel loginModel)
         {
-            throw new NotImplementedException();
+            return " ";
         }
 
         public string RegisterUser(RegisterModel model)

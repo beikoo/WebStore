@@ -1,18 +1,13 @@
-﻿using Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
+using Services.Implementation;
 namespace TestApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            StoreDbContext db = new StoreDbContext();
-            var res=db.People.ToList();
+            UserManager um = new UserManager();
+            um.RegisterUser(new Services.Models.RegisterModel() { Email = "tesst@da.bg", FirstName = "dd", LastName = "dd", Password = "Dd123dd!1", ConfirmPassword = "Dd123dd!1" });
         }
     }
 }
