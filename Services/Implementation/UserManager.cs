@@ -32,26 +32,34 @@ namespace Services.Implementation
         }
 
         public string RegisterUser(RegisterModel model)
-{
-            using (context = new WebStoreDbContext())
-{
-                Person user = context.People.Where(x => x.Email == model.Email).FirstOrDefault();
-                if (user == null)
+        {
+            try
+            {
+                using (context = new WebStoreDbContext())
                 {
-                    Person person = new Person()
+                    Person user = context.People.Where(x => x.Email == model.Email).FirstOrDefault();
+                    if (user == null)
                     {
-                        Email = model.Email,
-                        Password = model.Password, // PasswordHash
-                        FirstName = model.FirstName,
-                        LastName = model.LastName
-                    };
+                        Person person = new Person()
+                        {
+                            Email = model.Email,
+                            Password = model.Password, // PasswordHash
+                            FirstName = model.FirstName,
+                            LastName = model.LastName
+                        };
 
 
-                    return "ghghghg";
+                        return "ghghghg";
+                    }
+
                 }
-
+                return "";
             }
-            return "";
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
