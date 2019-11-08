@@ -15,10 +15,7 @@ namespace Data.Migrations
 
         protected override void Seed(Data.WebStoreDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            //context.People.Add(new Models.Person() { CreatedAt = DateTime.Now, Email = "dasd@da.bg", FirstName = "test", LastName = "dasdas", IsDeleted = false, Password = "dasdas" });
         }
     }
 }

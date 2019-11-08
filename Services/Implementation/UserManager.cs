@@ -45,20 +45,24 @@ namespace Services.Implementation
                             Email = model.Email,
                             Password = model.Password, // PasswordHash
                             FirstName = model.FirstName,
-                            LastName = model.LastName
+                            LastName = model.LastName,
+                            CreatedAt=DateTime.Now,
+                            IsDeleted=false
                         };
 
+                        context.People.Add(person);
+                        context.SaveChanges();
 
-                        return "ghghghg";
+                        return "";
                     }
 
                 }
-                return "";
+                return "Not added";
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                throw new Exception(e.Message);
             }
         }
     }
